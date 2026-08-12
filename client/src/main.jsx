@@ -13,19 +13,13 @@ if (!PUBLISHABLE_KEY) {
 
 
 createRoot(document.getElementById('root')).render(
-<ClerkProvider
-    publishableKey={PUBLISHABLE_KEY}
-    signInUrl="/login"
-    signUpUrl="/signup"
-    signInFallbackRedirectUrl="/"
-    signUpFallbackRedirectUrl="/"
->
+  <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
     <BrowserRouter>
-        <AppProvider>
-            <App />
-        </AppProvider>
+      <AppProvider>
+        <App />
+      </AppProvider>
     </BrowserRouter>
-</ClerkProvider>
+  </ClerkProvider>,
 )
 
 
