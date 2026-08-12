@@ -11,17 +11,21 @@ if (!PUBLISHABLE_KEY) {
   throw new Error('Missing Publishable Key')
 }
 
+
 createRoot(document.getElementById('root')).render(
-  <ClerkProvider
+<ClerkProvider
     publishableKey={PUBLISHABLE_KEY}
+    signInUrl="/login"
+    signUpUrl="/signup"
     signInFallbackRedirectUrl="/"
     signUpFallbackRedirectUrl="/"
-  >
+>
     <BrowserRouter>
-      <AppProvider>
-        <App />
-      </AppProvider>
+        <AppProvider>
+            <App />
+        </AppProvider>
     </BrowserRouter>
-  </ClerkProvider>,
+</ClerkProvider>
 )
+
 
